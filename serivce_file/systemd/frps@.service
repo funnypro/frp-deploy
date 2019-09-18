@@ -3,6 +3,7 @@ Description=Frp Server Service - A fast reverse proxy server - Profile=%i.ini
 #README.md
 Documentation=https://github.com/fatedier/frp/blob/master/README.md
 After=network.target
+Wants=network.target
 
 [Service]
 Type=simple

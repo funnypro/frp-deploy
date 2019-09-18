@@ -3,14 +3,15 @@ Description=Frp Client Service - A fast reverse proxy client
 #README.md
 Documentation=https://github.com/fatedier/frp/blob/master/README.md
 After=network.target
+Wants=network.target
 
 [Service]
 Type=simple
 #root can use 1~1024 ports
 User=nobody
 Restart=on-failure
-ExecStart=/usr/bin/frpc -c /etc/frp/client/default-client.ini
-ExecReload=/usr/bin/frpc reload -c /etc/frp/client/default-client.ini
+ExecStart=/usr/bin/frpc -c /etc/frp/client/default.ini
+ExecReload=/usr/bin/frpc reload -c /etc/frp/client/default.ini
 StandardOutput=syslog
 
 [Install]

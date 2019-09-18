@@ -3,13 +3,14 @@ Description=Frp Server Service - A fast reverse proxy server
 #README.md
 Documentation=https://github.com/fatedier/frp/blob/master/README.md
 After=network.target
+Wants=network.target
 
 [Service]
 Type=simple
 #root can use 1~1024 ports
 User=nobody
 Restart=on-failure
-ExecStart=/usr/bin/frps -c /etc/frp/server/default-server.ini
+ExecStart=/usr/bin/frps -c /etc/frp/server/default.ini
 StandardOutput=syslog
 
 [Install]
